@@ -44,7 +44,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F59E0B] via-orange-500 to-red-600 text-white rounded-b-3xl shadow-xl">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-        <div className="relative px-6 pt-24 pb-6 flex flex-col items-center text-center">
+        <div className="relative px-6 pt-32 pb-6 flex flex-col items-center text-center">
           <span className="inline-block px-3 py-1 mb-4 text-xs font-bold uppercase tracking-widest bg-white/20 rounded-full backdrop-blur-md border border-white/30">
             Sri Lakshminarasimha Industries
           </span>
@@ -52,7 +52,7 @@ export default function Home() {
             Tradition in <br />
             <span className="text-yellow-200">Every Grain</span>
           </h1>
-          <p className="text-orange-100 mb-8 max-w-xs mx-auto text-sm leading-relaxed">
+          <p className="text-white mb-8 max-w-sm mx-auto text-base sm:text-lg leading-relaxed font-medium drop-shadow">
             Premium quality Idli Rawa, Ragi Flour, and Rice Flour crafted with love from Gangavathi, Karnataka.
           </p>
           <Link
@@ -134,10 +134,10 @@ export default function Home() {
               id={p.anchor}
               className={`group rounded-2xl border border-orange-100 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row ${i % 2 === 1 ? 'sm:flex-row-reverse' : ''}`}
             >
-              {/* Image panel — fixed square, never stretches */}
-              <div className="sm:w-[38%] flex-shrink-0 bg-gradient-to-br from-[#FEF9EC] to-[#FDE68A]/30 flex items-center justify-center p-6 min-h-[200px]">
-                <div className="relative w-40 h-40 sm:w-48 sm:h-48">
-                  <Image src={p.img} alt={p.name} fill className="object-contain drop-shadow-2xl" />
+              {/* Image panel */}
+              <div className="sm:w-[42%] flex-shrink-0 bg-gradient-to-br from-amber-100 via-yellow-200 to-orange-200 flex items-center justify-center p-6 min-h-[240px]">
+                <div className="relative w-52 h-52 sm:w-60 sm:h-60 drop-shadow-[0_8px_28px_rgba(0,0,0,0.18)]" style={{ filter: 'brightness(1.1) saturate(1.2) contrast(1.05)' }}>
+                  <Image src={p.img} alt={p.name} fill className="object-contain" />
                 </div>
               </div>
 

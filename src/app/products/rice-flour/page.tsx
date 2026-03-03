@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RiceFlourPage() {
   return (
-    <div className="bg-[#FFF7ED] min-h-screen pt-16">
+    <div className="bg-[#FFF7ED] min-h-screen pt-28">
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
@@ -29,9 +29,9 @@ export default function RiceFlourPage() {
 
           {/* LEFT - Images */}
           <div className="lg:sticky lg:top-24 mb-8 lg:mb-0">
-            <div className="bg-gradient-to-br from-amber-50 to-yellow-100 rounded-3xl overflow-hidden flex items-center justify-center shadow-lg border border-amber-100" style={{minHeight: '480px'}}>
-              <div className="relative w-[22rem] h-[22rem] sm:w-[26rem] sm:h-[26rem]">
-                <Image src="/images/rice.png" alt="Rice Flour pack" fill className="object-contain drop-shadow-2xl" priority />
+            <div className="bg-gradient-to-br from-yellow-200 via-amber-100 to-orange-200 rounded-3xl overflow-hidden flex items-center justify-center shadow-xl border border-amber-200" style={{minHeight: '540px'}}>
+              <div className="relative w-[26rem] h-[26rem] sm:w-[30rem] sm:h-[30rem]" style={{ filter: 'brightness(1.12) saturate(1.2) contrast(1.05)' }}>
+                <Image src="/images/rice.png" alt="Rice Flour pack" fill className="object-contain drop-shadow-[0_12px_40px_rgba(0,0,0,0.25)]" priority />
               </div>
             </div>
           </div>
