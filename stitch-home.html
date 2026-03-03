@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vijaykrishna - Tradition in Every Grain</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F59E0B", // Saffron/Amber color
+                        secondary: "#B91C1C", // Red from the packaging
+                        "background-light": "#FFF7ED", // Warm light background
+                        "background-dark": "#1C1917", // Warm dark background
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#292524",
+                        "text-main-light": "#431407",
+                        "text-main-dark": "#FDE68A",
+                        "text-sub-light": "#78350F",
+                        "text-sub-dark": "#D6D3D1",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Lato", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        /* Carousel */
+        .carousel-track { display: flex; transition: transform 0.5s ease; }
+        .carousel-slide { min-width: 100%; }
+        .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: background 0.3s; }
+        .carousel-dot.active { background: white; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased transition-colors duration-300">
+<header class="fixed top-0 w-full z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-primary/20 shadow-sm">
+<div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold font-display text-xl shadow-lg">
+                    V
+                </div>
+<span class="text-xl font-display font-bold text-text-main-light dark:text-text-main-dark">Vijaykrishna</span>
+</div>
+<button class="p-2 rounded-full hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors text-text-main-light dark:text-text-main-dark">
+<span class="material-icons">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-20 max-w-md mx-auto">
+<section class="relative overflow-hidden bg-gradient-to-br from-primary via-orange-500 to-red-600 dark:from-orange-700 dark:to-red-900 text-white rounded-b-3xl shadow-xl">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+<div class="relative px-6 py-12 flex flex-col items-center text-center">
+<span class="inline-block px-3 py-1 mb-4 text-xs font-bold uppercase tracking-widest bg-white/20 rounded-full backdrop-blur-md border border-white/30">Since 1984</span>
+<h1 class="text-4xl font-display font-bold mb-4 drop-shadow-md leading-tight">Tradition in <br/><span class="text-yellow-200">Every Grain</span></h1>
+<p class="text-orange-100 mb-8 max-w-xs mx-auto text-sm leading-relaxed">
+                    Premium quality Idli Rawa, Ragi Flour, and Rice Flour crafted with love by Sri Lakshminarasimha Industries.
+                </p>
+<a class="group bg-white text-primary px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center" href="#products">
+                    Explore Products
+                    <span class="material-icons ml-2 group-hover:translate-x-1 transition-transform text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="mt-[-20px] mx-6 mb-4 relative z-10" id="heroCarousel">
+  <div class="overflow-hidden rounded-xl shadow-2xl border-4 border-white/20">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide"><a href="#idli-rawa"><img alt="Idli Rawa" class="w-full h-56 object-cover bg-white" src="/images/idli-bg.jpeg"/></a></div>
+      <div class="carousel-slide"><a href="#ragi-flour"><img alt="Ragi Flour" class="w-full h-56 object-cover bg-white" src="/images/ragi-bg.jpeg"/></a></div>
+      <div class="carousel-slide"><a href="#rice-flour"><img alt="Rice Flour" class="w-full h-56 object-cover bg-white" src="/images/rice-bg.jpeg"/></a></div>
+    </div>
+  </div>
+  <div class="flex justify-center gap-2 mt-3" id="carouselDots">
+    <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+    <div class="carousel-dot" onclick="goToSlide(1)"></div>
+    <div class="carousel-dot" onclick="goToSlide(2)"></div>
+  </div>
+</div>
+<div class="flex justify-center gap-3 mb-8 text-xs font-bold text-white/80">
+  <a href="#idli-rawa" class="hover:text-white transition-colors">Idli Rawa</a>
+  <span>·</span>
+  <a href="#ragi-flour" class="hover:text-white transition-colors">Ragi Flour</a>
+  <span>·</span>
+  <a href="#rice-flour" class="hover:text-white transition-colors">Rice Flour</a>
+</div>
+</section>
+<section class="px-6 py-10">
+<div class="flex flex-col space-y-4">
+<div class="flex items-center space-x-2 mb-2">
+<span class="h-px w-8 bg-primary"></span>
+<span class="text-primary font-bold uppercase text-xs tracking-wider">Our Heritage</span>
+</div>
+<h2 class="text-2xl font-display font-bold text-text-main-light dark:text-text-main-dark">
+                    Nurturing Health with <br/> Traditional Tastes
+                </h2>
+<p class="text-text-sub-light dark:text-text-sub-dark leading-relaxed text-sm">
+                    At Sri Lakshminarasimha Industries (SLI), we bring the authentic taste of Karnataka to your kitchen. Our grains are carefully selected and processed to retain their natural goodness, ensuring every meal is a celebration of health and flavor.
+                </p>
+</div>
+</section>
+<section class="px-4 py-8 bg-orange-50 dark:bg-zinc-900/50 rounded-3xl mx-2" id="products">
+<div class="flex justify-between items-end mb-6 px-2">
+<div>
+<span class="text-primary font-bold uppercase text-xs tracking-wider">Our Collection</span>
+<h2 class="text-2xl font-display font-bold text-text-main-light dark:text-text-main-dark mt-1">Best Sellers</h2>
+</div>
+<a class="text-sm font-bold text-primary flex items-center hover:underline" href="#">
+                    View All <span class="material-icons text-sm ml-1">chevron_right</span>
+</a>
+</div>
+<div class="space-y-6">
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-center border border-orange-100 dark:border-zinc-700">
+<div class="w-24 h-24 flex-shrink-0 bg-white dark:bg-white/10 rounded-xl overflow-hidden relative border border-gray-100">
+<img alt="Idli Rawa" class="w-full h-full object-contain p-1" src="/images/idli.png"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-display font-bold text-lg text-text-main-light dark:text-text-main-dark leading-tight">Premium Idli Rawa</h3>
+<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">Veg</span>
+</div>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 mb-3 line-clamp-2">Perfectly granulated for soft, fluffy Idlis every time.</p>
+<a href="/products/idli-rawa" class="block bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg w-full text-center active:scale-95 transition-transform shadow-md shadow-orange-200 dark:shadow-none">View Details</a>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-center border border-orange-100 dark:border-zinc-700">
+<div class="w-24 h-24 flex-shrink-0 bg-white dark:bg-white/10 rounded-xl overflow-hidden relative border border-gray-100">
+<img alt="Ragi Flour" class="w-full h-full object-contain p-1" src="/images/ragi.png"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-display font-bold text-lg text-text-main-light dark:text-text-main-dark leading-tight">Healthy Ragi Flour</h3>
+<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">Veg</span>
+</div>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 mb-3 line-clamp-2">Rich in calcium and fiber, traditional taste for modern health.</p>
+<a href="/products/ragi-flour" class="block bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg w-full text-center active:scale-95 transition-transform shadow-md shadow-orange-200 dark:shadow-none">View Details</a>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow flex gap-4 items-center border border-orange-100 dark:border-zinc-700">
+<div class="w-24 h-24 flex-shrink-0 bg-white dark:bg-white/10 rounded-xl overflow-hidden relative border border-gray-100">
+<img alt="Rice Flour" class="w-full h-full object-contain p-1" src="/images/rice.png"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-display font-bold text-lg text-text-main-light dark:text-text-main-dark leading-tight">Pure Rice Flour</h3>
+<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full dark:bg-green-900 dark:text-green-100">Veg</span>
+</div>
+<p class="text-xs text-text-sub-light dark:text-text-sub-dark mt-1 mb-3 line-clamp-2">Finely ground for crispy dosas and traditional snacks.</p>
+<a href="/products/rice-flour" class="block bg-primary text-white text-xs font-bold px-4 py-2 rounded-lg w-full text-center active:scale-95 transition-transform shadow-md shadow-orange-200 dark:shadow-none">View Details</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-10 px-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white dark:bg-zinc-800 p-4 rounded-xl text-center shadow-sm border border-gray-100 dark:border-zinc-700">
+<div class="text-primary mb-2">
+<span class="material-icons text-3xl">verified</span>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-text-main-dark">Premium Quality</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Sorted &amp; Graded</p>
+</div>
+<div class="bg-white dark:bg-zinc-800 p-4 rounded-xl text-center shadow-sm border border-gray-100 dark:border-zinc-700">
+<div class="text-primary mb-2">
+<span class="material-icons text-3xl">history_edu</span>
+</div>
+<h4 class="font-bold text-text-main-light dark:text-text-main-dark">Since 1984</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Years of Trust</p>
+</div>
+</div>
+</section>
+<!-- ===== PRODUCT DETAIL SECTIONS ===== -->
+<section id="idli-rawa" class="px-4 py-10 mx-2 mt-6">
+  <div class="flex items-center space-x-2 mb-3">
+    <span class="h-px w-8 bg-primary"></span>
+    <span class="text-primary font-bold uppercase text-xs tracking-wider">Our Products</span>
+  </div>
+  <h2 class="text-2xl font-display font-bold text-text-main-light dark:text-text-main-dark mb-4">Premium Idli Rawa</h2>
+  <div class="rounded-2xl overflow-hidden shadow-lg mb-5">
+    <img src="/images/idli-bg.jpeg" alt="Idli Rawa" class="w-full h-52 object-cover"/>
+  </div>
+  <p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-5">Our Idli Rawa is made from carefully selected rice, processed to give you consistently soft and fluffy idlis. No additives, no preservatives — just pure quality from Sri Lakshminarasimha Industries.</p>
+  <div class="bg-orange-50 dark:bg-zinc-800 rounded-xl p-4 mb-5">
+    <h4 class="font-bold text-text-main-light dark:text-text-main-dark mb-3 text-sm">Key Highlights</h4>
+    <ul class="space-y-2">
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Premium quality rice</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> No additives or preservatives</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Consistent texture every time</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Ideal for daily use</li>
+    </ul>
+  </div>
+  <a href="/products/idli-rawa" class="block bg-primary text-white font-bold py-3 rounded-xl text-center text-sm shadow-md shadow-orange-200">More Details →</a>
+</section>
+
+<div class="h-px bg-orange-100 dark:bg-zinc-700 mx-6"></div>
+
+<section id="ragi-flour" class="px-4 py-10 mx-2">
+  <div class="flex items-center space-x-2 mb-3">
+    <span class="h-px w-8 bg-primary"></span>
+    <span class="text-primary font-bold uppercase text-xs tracking-wider">Our Products</span>
+  </div>
+  <h2 class="text-2xl font-display font-bold text-text-main-light dark:text-text-main-dark mb-4">Healthy Ragi Flour</h2>
+  <div class="rounded-2xl overflow-hidden shadow-lg mb-5">
+    <img src="/images/ragi-bg.jpeg" alt="Ragi Flour" class="w-full h-52 object-cover"/>
+  </div>
+  <p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-5">Stone-ground Ragi Flour packed with natural calcium, iron and fibre. Perfect for healthy porridges, rotis, dosas, and baked goods — traditional taste for the modern family.</p>
+  <div class="bg-orange-50 dark:bg-zinc-800 rounded-xl p-4 mb-5">
+    <h4 class="font-bold text-text-main-light dark:text-text-main-dark mb-3 text-sm">Key Highlights</h4>
+    <ul class="space-y-2">
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> 100% natural ragi</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Rich in calcium &amp; iron</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> High fibre content</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Versatile — rotis, dosas, porridge</li>
+    </ul>
+  </div>
+  <a href="/products/ragi-flour" class="block bg-primary text-white font-bold py-3 rounded-xl text-center text-sm shadow-md shadow-orange-200">More Details →</a>
+</section>
+
+<div class="h-px bg-orange-100 dark:bg-zinc-700 mx-6"></div>
+
+<section id="rice-flour" class="px-4 py-10 mx-2">
+  <div class="flex items-center space-x-2 mb-3">
+    <span class="h-px w-8 bg-primary"></span>
+    <span class="text-primary font-bold uppercase text-xs tracking-wider">Our Products</span>
+  </div>
+  <h2 class="text-2xl font-display font-bold text-text-main-light dark:text-text-main-dark mb-4">Pure Rice Flour</h2>
+  <div class="rounded-2xl overflow-hidden shadow-lg mb-5">
+    <img src="/images/rice-bg.jpeg" alt="Rice Flour" class="w-full h-52 object-cover"/>
+  </div>
+  <p class="text-sm text-text-sub-light dark:text-text-sub-dark leading-relaxed mb-5">Finely milled Rice Flour with a smooth texture — ideal for traditional Karnataka snacks, chakli, sweets, and everyday cooking. No preservatives, just pure goodness.</p>
+  <div class="bg-orange-50 dark:bg-zinc-800 rounded-xl p-4 mb-5">
+    <h4 class="font-bold text-text-main-light dark:text-text-main-dark mb-3 text-sm">Key Highlights</h4>
+    <ul class="space-y-2">
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Finely milled, smooth texture</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> No preservatives</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Traditional &amp; versatile</li>
+      <li class="flex items-center gap-2 text-sm text-text-sub-light dark:text-text-sub-dark"><span class="material-icons text-primary text-base">check_circle</span> Perfect for chakli, sweets &amp; snacks</li>
+    </ul>
+  </div>
+  <a href="/products/rice-flour" class="block bg-primary text-white font-bold py-3 rounded-xl text-center text-sm shadow-md shadow-orange-200">More Details →</a>
+</section>
+
+<footer class="bg-[#431407] dark:bg-black text-orange-50 px-6 py-10 rounded-t-3xl mt-4">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold font-display text-2xl shadow-lg mb-2">
+                    V
+                </div>
+<div>
+<h3 class="font-display font-bold text-xl mb-1">Sri Lakshminarasimha Industries</h3>
+<a href="https://maps.app.goo.gl/CTCatxDLxaxsewkVA" target="_blank" rel="noopener noreferrer" class="text-xs text-orange-200/80 hover:text-white transition-colors underline underline-offset-2">Virupapur Nagar, Anegundi - Gangavathi Rd,<br/>Veerabhadreshware Hill, Gangavathi,<br/>Karnataka 583227</a>
+</div>
+<div class="w-full h-px bg-white/10 my-4"></div>
+<div class="grid grid-cols-2 gap-x-8 gap-y-4 text-sm w-full max-w-xs">
+<div class="flex flex-col items-center">
+<span class="text-orange-300 text-xs uppercase font-bold mb-1">Call Us</span>
+<a class="font-medium hover:text-white transition-colors" href="tel:9448190326">94481 90326</a>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-orange-300 text-xs uppercase font-bold mb-1">Office</span>
+<a class="font-medium hover:text-white transition-colors" href="tel:08533230326">08533-230326</a>
+</div>
+</div>
+<div class="flex space-x-4 mt-4">
+<a class="p-2 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<span class="text-lg font-bold">f</span>
+</a>
+<a class="p-2 bg-white/10 rounded-full hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<span class="text-lg font-bold">in</span>
+</a>
+</div>
+<p class="text-[10px] text-white/30 mt-8">
+                    © 2025 Vijaykrishna. All Rights Reserved.
+                </p>
+</div>
+</footer>
+</main>
+<a class="fixed bottom-6 right-6 w-14 h-14 bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform z-40" href="tel:9448190326">
+<span class="material-icons">call</span>
+</a>
+
+<script>
+  // Carousel logic
+  let current = 0;
+  const track = document.getElementById('carouselTrack');
+  const dots = document.querySelectorAll('.carousel-dot');
+  function goToSlide(n) {
+    current = n;
+    track.style.transform = `translateX(-${n * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === n));
+  }
+  setInterval(() => goToSlide((current + 1) % 3), 3000);
+</script>
+</body></html>

@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFF7ED;
+  --foreground: #1C0A00;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Saffron / Orange */
+  --color-saffron-DEFAULT: #E8650A;
+  --color-saffron-light: #F97316;
+  --color-saffron-dark: #C2500A;
+
+  /* Amber / Gold */
+  --color-amber-DEFAULT: #F59E0B;
+  --color-amber-light: #FCD34D;
+  --color-amber-dark: #D97706;
+
+  /* Espresso Brown */
+  --color-espresso-DEFAULT: #1C0A00;
+  --color-espresso-light: #3D1A00;
+  --color-espresso-medium: #78350F;
+
+  /* Warm Cream */
+  --color-cream-DEFAULT: #FFF7ED;
+  --color-cream-dark: #FED7AA;
+
+  /* Keep maroon/gold aliases for existing code */
+  --color-gold-DEFAULT: #F59E0B;
+  --color-gold-light: #FCD34D;
+  --color-gold-dark: #D97706;
+  --color-maroon-DEFAULT: #E8650A;
+  --color-maroon-light: #F97316;
+  --color-maroon-dark: #C2500A;
+  --color-cream: #FFF7ED;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
