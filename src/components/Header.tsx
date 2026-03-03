@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
@@ -20,8 +21,14 @@ export default function Header() {
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-9 h-9 rounded-full bg-[#F59E0B] flex items-center justify-center text-white font-bold font-serif text-xl shadow-lg">
-            V
+          <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#F59E0B]/40 shadow-md flex-shrink-0">
+            <Image
+              src="/images/sli-logo.jpg"
+              alt="Vijaykrishna"
+              width={36}
+              height={36}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-lg font-serif font-bold text-[#431407]">Vijaykrishna</span>
