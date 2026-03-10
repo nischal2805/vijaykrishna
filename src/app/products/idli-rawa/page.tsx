@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'Premium Idli Rawa from Gangavathi, Karnataka. Zero additives, zero preservatives. Retail & wholesale packs available.',
     url: 'https://vijaykrishna.org/products/idli-rawa',
-    images: [{ url: '/images/idli.png', alt: 'Vijaykrishna Premium Idli Rawa' }],
+    images: [{ url: '/images/idli.png', width: 1200, height: 630, alt: 'Vijaykrishna Premium Idli Rawa' }],
   },
   alternates: { canonical: 'https://vijaykrishna.org/products/idli-rawa' },
 };

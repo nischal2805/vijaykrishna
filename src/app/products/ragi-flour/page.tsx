@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Stone-ground, gluten-free Ragi Flour from Gangavathi, Karnataka. No additives, rich in calcium & iron. Wholesale available.',
     url: 'https://vijaykrishna.org/products/ragi-flour',
-    images: [{ url: '/images/ragi.png', alt: 'Vijaykrishna Ragi Flour' }],
+    images: [{ url: '/images/ragi.png', width: 1200, height: 630, alt: 'Vijaykrishna Ragi Flour' }],
   },
   alternates: { canonical: 'https://vijaykrishna.org/products/ragi-flour' },
 };

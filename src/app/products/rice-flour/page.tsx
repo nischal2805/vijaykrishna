@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       'Finely milled, pure Rice Flour from Gangavathi, Karnataka. No preservatives. Perfect for chakli, dosas & sweets.',
     url: 'https://vijaykrishna.org/products/rice-flour',
-    images: [{ url: '/images/rice.png', alt: 'Vijaykrishna Rice Flour' }],
+    images: [{ url: '/images/rice.png', width: 1200, height: 630, alt: 'Vijaykrishna Rice Flour' }],
   },
   alternates: { canonical: 'https://vijaykrishna.org/products/rice-flour' },
 };
