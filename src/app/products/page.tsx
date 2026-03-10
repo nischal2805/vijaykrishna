@@ -3,8 +3,26 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Products',
-  description: 'Explore our range of premium natural flour products — Idli Rawa, Ragi Flour, and Rice Flour. Crafted in Gangavathi, Karnataka with no additives.',
+  title: 'Natural Flour Products – Idli Rawa, Ragi Flour & Rice Flour',
+  description:
+    'Explore Vijaykrishna\'s range of premium natural flour products – Idli Rawa, Ragi Flour and Rice Flour. Crafted at Sri Lakshminarasimha Industries, Gangavathi, Karnataka. Zero additives, wholesale available.',
+  keywords: [
+    'natural flour products',
+    'idli rawa',
+    'ragi flour',
+    'rice flour',
+    'wholesale flour Karnataka',
+    'buy flour online Karnataka',
+    'pure flour no additives',
+    'Vijaykrishna products',
+    'Sri Lakshminarasimha Industries',
+  ],
+  openGraph: {
+    title: 'Natural Flour Products – Idli Rawa, Ragi Flour & Rice Flour | Vijaykrishna',
+    description:
+      'Premium Idli Rawa, Ragi Flour and Rice Flour from Gangavathi, Karnataka. No additives, wholesale available.',
+    url: 'https://vijaykrishna.org/products',
+  },
   alternates: { canonical: 'https://vijaykrishna.org/products' },
 };
 

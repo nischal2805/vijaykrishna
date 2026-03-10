@@ -3,14 +3,60 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Healthy Ragi Flour',
-  description: 'Buy Vijaykrishna Ragi Flour — stone-ground, gluten-free, rich in calcium and iron. Ideal for rotis, dosas, mudde and porridge.',
+  title: 'Buy Ragi Flour – Stone-Ground, Gluten-Free | Vijaykrishna',
+  description:
+    'Buy pure Ragi Flour from Vijaykrishna, Gangavathi, Karnataka. Stone-ground, gluten-free, rich in calcium and iron. No additives. Ideal for rotis, dosas, mudde and porridge. Available wholesale in 20 kg and 50 kg packs.',
+  keywords: [
+    'ragi flour',
+    'buy ragi flour',
+    'finger millet flour',
+    'gluten free ragi flour',
+    'stone ground ragi flour',
+    'ragi flour Karnataka',
+    'wholesale ragi flour',
+    'ragi flour no preservatives',
+    'Vijaykrishna ragi flour',
+    'ragi atta',
+    'nachni flour',
+  ],
+  openGraph: {
+    title: 'Buy Ragi Flour – Stone-Ground, Gluten-Free | Vijaykrishna',
+    description:
+      'Stone-ground, gluten-free Ragi Flour from Gangavathi, Karnataka. No additives, rich in calcium & iron. Wholesale available.',
+    url: 'https://vijaykrishna.org/products/ragi-flour',
+    images: [{ url: '/images/ragi.png', alt: 'Vijaykrishna Ragi Flour' }],
+  },
   alternates: { canonical: 'https://vijaykrishna.org/products/ragi-flour' },
 };
 
 export default function RagiFlourPage() {
   return (
-    <div className="bg-[#FFF7ED] min-h-screen pt-28">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Vijaykrishna Ragi Flour',
+            description:
+              'Stone-ground Ragi Flour. Gluten-free, rich in calcium and iron. No additives or preservatives. Ideal for rotis, dosas, mudde and porridge.',
+            image: 'https://vijaykrishna.org/images/ragi.png',
+            brand: { '@type': 'Brand', name: 'Vijaykrishna' },
+            manufacturer: {
+              '@type': 'Organization',
+              name: 'Sri Lakshminarasimha Industries',
+              address: { '@type': 'PostalAddress', addressLocality: 'Gangavathi', addressRegion: 'Karnataka', addressCountry: 'IN' },
+            },
+            offers: [
+              { '@type': 'Offer', name: '1 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '20 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '50 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+            ],
+          }),
+        }}
+      />
+      <div className="bg-[#FFF7ED] min-h-screen pt-28">
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
@@ -175,5 +221,6 @@ export default function RagiFlourPage() {
       </div>
 
     </div>
+    </>
   );
 }

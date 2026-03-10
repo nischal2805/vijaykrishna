@@ -3,14 +3,59 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Pure Rice Flour',
-  description: 'Buy Vijaykrishna Pure Rice Flour — finely milled, no preservatives. Perfect for chakli, dosas, Karnataka snacks and traditional sweets.',
+  title: 'Buy Rice Flour – Pure & Finely Milled | Vijaykrishna',
+  description:
+    'Buy pure Rice Flour from Vijaykrishna, Gangavathi, Karnataka. Finely milled, no preservatives, no additives. Perfect for chakli, dosas, and traditional Karnataka snacks and sweets. Retail and wholesale packs available.',
+  keywords: [
+    'rice flour',
+    'buy rice flour',
+    'rice flour Karnataka',
+    'pure rice flour',
+    'rice flour no preservatives',
+    'chakli flour',
+    'akki hittu',
+    'wholesale rice flour',
+    'Vijaykrishna rice flour',
+    'finely milled rice flour',
+  ],
+  openGraph: {
+    title: 'Buy Rice Flour – Pure & Finely Milled | Vijaykrishna',
+    description:
+      'Finely milled, pure Rice Flour from Gangavathi, Karnataka. No preservatives. Perfect for chakli, dosas & sweets.',
+    url: 'https://vijaykrishna.org/products/rice-flour',
+    images: [{ url: '/images/rice.png', alt: 'Vijaykrishna Rice Flour' }],
+  },
   alternates: { canonical: 'https://vijaykrishna.org/products/rice-flour' },
 };
 
 export default function RiceFlourPage() {
   return (
-    <div className="bg-[#FFF7ED] min-h-screen pt-28">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Vijaykrishna Pure Rice Flour',
+            description:
+              'Finely milled pure Rice Flour. No preservatives, no additives. Perfect for chakli, dosas, and traditional Karnataka snacks and sweets.',
+            image: 'https://vijaykrishna.org/images/rice.png',
+            brand: { '@type': 'Brand', name: 'Vijaykrishna' },
+            manufacturer: {
+              '@type': 'Organization',
+              name: 'Sri Lakshminarasimha Industries',
+              address: { '@type': 'PostalAddress', addressLocality: 'Gangavathi', addressRegion: 'Karnataka', addressCountry: 'IN' },
+            },
+            offers: [
+              { '@type': 'Offer', name: '1 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '20 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '50 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+            ],
+          }),
+        }}
+      />
+      <div className="bg-[#FFF7ED] min-h-screen pt-28">
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
@@ -175,5 +220,6 @@ export default function RiceFlourPage() {
       </div>
 
     </div>
+    </>
   );
 }

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     'Buy premium Idli Rawa, Ragi Flour, and Rice Flour from Sri Lakshminarasimha Industries, Gangavathi, Karnataka. No additives, no preservatives — pure quality.',
   keywords: [
     'Idli Rawa',
+    'Idli Rava',
     'Ragi Flour',
     'Rice Flour',
     'Gangavathi',
@@ -34,6 +35,15 @@ export const metadata: Metadata = {
     'pure ragi flour',
     'idli rava online',
     'bulk flour Karnataka',
+    'wholesale flour supplier',
+    'ragi flour wholesale',
+    'rice flour wholesale',
+    'no preservatives flour',
+    'stone ground ragi flour',
+    'buy idli rawa Karnataka',
+    'flour mill Gangavathi',
+    'traditional flour mill',
+    'gluten free ragi flour',
   ],
   authors: [{ name: 'Sri Lakshminarasimha Industries' }],
   creator: 'Sri Lakshminarasimha Industries',
@@ -87,6 +97,51 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-cream text-gray-900 font-sans flex flex-col min-h-screen`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://vijaykrishna.org/#organization',
+                  name: 'Vijaykrishna – Sri Lakshminarasimha Industries',
+                  url: 'https://vijaykrishna.org',
+                  logo: 'https://vijaykrishna.org/images/logo.png',
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+91-9448190326',
+                    contactType: 'sales',
+                    availableLanguage: ['English', 'Kannada', 'Telugu'],
+                  },
+                  email: 'vkagrofood28@gmail.com',
+                  sameAs: [],
+                },
+                {
+                  '@type': 'LocalBusiness',
+                  '@id': 'https://vijaykrishna.org/#localbusiness',
+                  name: 'Sri Lakshminarasimha Industries',
+                  alternateName: 'Vijaykrishna Agro Foods',
+                  url: 'https://vijaykrishna.org',
+                  telephone: '+91-9448190326',
+                  email: 'vkagrofood28@gmail.com',
+                  description:
+                    'Premium natural flour products – Idli Rawa, Ragi Flour and Rice Flour. No additives, no preservatives. Wholesale and retail available from Gangavathi, Karnataka.',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Gangavathi',
+                    addressRegion: 'Karnataka',
+                    addressCountry: 'IN',
+                  },
+                  priceRange: '₹',
+                  servesCuisine: 'Indian',
+                  openingHours: 'Mo-Sa 09:00-18:00',
+                },
+              ],
+            }),
+          }}
+        />
         <Header />
         <main className="flex-grow">
           {children}

@@ -3,14 +3,59 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Premium Idli Rawa',
-  description: 'Buy Vijaykrishna Premium Idli Rawa — made from carefully selected rice, no additives, no preservatives. Perfect for soft fluffy idlis every time.',
+  title: 'Buy Idli Rawa Online – No Additives, Wholesale Available',
+  description:
+    'Buy premium Idli Rawa from Vijaykrishna (Sri Lakshminarasimha Industries), Gangavathi, Karnataka. Made from carefully selected rice with zero additives or preservatives. Available in 1 kg, 20 kg and 50 kg packs for retail and wholesale.',
+  keywords: [
+    'idli rawa',
+    'idli rava',
+    'buy idli rawa',
+    'idli rava online',
+    'idli rava Karnataka',
+    'idli rawa Gangavathi',
+    'wholesale idli rava',
+    'no preservatives idli rava',
+    'pure idli rawa',
+    'Vijaykrishna idli rawa',
+  ],
+  openGraph: {
+    title: 'Buy Idli Rawa – No Additives | Vijaykrishna',
+    description:
+      'Premium Idli Rawa from Gangavathi, Karnataka. Zero additives, zero preservatives. Retail & wholesale packs available.',
+    url: 'https://vijaykrishna.org/products/idli-rawa',
+    images: [{ url: '/images/idli.png', alt: 'Vijaykrishna Premium Idli Rawa' }],
+  },
   alternates: { canonical: 'https://vijaykrishna.org/products/idli-rawa' },
 };
 
 export default function IdliRawaPage() {
   return (
-    <div className="bg-[#FFF7ED] min-h-screen pt-28">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Vijaykrishna Premium Idli Rawa',
+            description:
+              'Premium Idli Rawa made from carefully selected rice. No additives, no preservatives. Perfect for soft, fluffy idlis.',
+            image: 'https://vijaykrishna.org/images/idli.png',
+            brand: { '@type': 'Brand', name: 'Vijaykrishna' },
+            manufacturer: {
+              '@type': 'Organization',
+              name: 'Sri Lakshminarasimha Industries',
+              address: { '@type': 'PostalAddress', addressLocality: 'Gangavathi', addressRegion: 'Karnataka', addressCountry: 'IN' },
+            },
+            offers: [
+              { '@type': 'Offer', name: '1 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '20 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+              { '@type': 'Offer', name: '50 kg Pack', priceCurrency: 'INR', availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'Vijaykrishna' } },
+            ],
+          }),
+        }}
+      />
+      <div className="bg-[#FFF7ED] min-h-screen pt-28">
 
       {/* Breadcrumb */}
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-4">
@@ -185,5 +230,6 @@ export default function IdliRawaPage() {
       </div>
 
     </div>
+    </>
   );
 }

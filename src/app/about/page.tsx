@@ -3,8 +3,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about Sri Lakshminarasimha Industries — a family-owned mill in Gangavathi, Karnataka, crafting premium Idli Rawa, Ragi Flour, and Rice Flour since 1984.',
+  title: 'About Vijaykrishna – Sri Lakshminarasimha Industries Since 1984',
+  description:
+    'Learn about Sri Lakshminarasimha Industries – a family-owned flour mill in Gangavathi, Karnataka, crafting pure Idli Rawa, Ragi Flour and Rice Flour since 1984. No additives, no compromises.',
+  keywords: [
+    'about Vijaykrishna',
+    'Sri Lakshminarasimha Industries',
+    'flour mill Gangavathi',
+    'family flour mill Karnataka',
+    'traditional flour mill since 1984',
+    'pure natural flour manufacturer',
+  ],
+  openGraph: {
+    title: 'About Vijaykrishna – Sri Lakshminarasimha Industries Since 1984',
+    description:
+      'Family-owned flour mill in Gangavathi, Karnataka. Crafting pure Idli Rawa, Ragi Flour and Rice Flour since 1984 with no additives.',
+    url: 'https://vijaykrishna.org/about',
+  },
   alternates: { canonical: 'https://vijaykrishna.org/about' },
 };
 

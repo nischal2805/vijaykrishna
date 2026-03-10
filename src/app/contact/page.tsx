@@ -3,8 +3,22 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with Sri Lakshminarasimha Industries, Gangavathi. Call, email, or visit us for bulk orders and enquiries.',
+  title: 'Contact Vijaykrishna – Bulk Orders & Wholesale Enquiries',
+  description:
+    'Contact Sri Lakshminarasimha Industries, Gangavathi, Karnataka. Call or email for bulk orders, wholesale pricing, and product enquiries for Idli Rawa, Ragi Flour and Rice Flour.',
+  keywords: [
+    'contact Vijaykrishna',
+    'flour wholesale enquiry',
+    'bulk flour order Karnataka',
+    'Sri Lakshminarasimha Industries contact',
+    'Gangavathi flour supplier contact',
+  ],
+  openGraph: {
+    title: 'Contact Vijaykrishna – Bulk Orders & Wholesale Enquiries',
+    description:
+      'Reach out to Sri Lakshminarasimha Industries for bulk and wholesale orders of Idli Rawa, Ragi Flour and Rice Flour.',
+    url: 'https://vijaykrishna.org/contact',
+  },
   alternates: { canonical: 'https://vijaykrishna.org/contact' },
 };
 
