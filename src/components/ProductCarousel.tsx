@@ -5,28 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const slides = [
-  {
-    img: '/images/idli.png',
-    bg: 'from-amber-400 via-orange-300 to-yellow-200',
-    label: 'Premium Idli Rawa',
-    tagline: 'Soft, fluffy idlis every time',
-    href: '/products/idli-rawa',
-  },
-  {
-    img: '/images/ragi.png',
-    bg: 'from-red-700 via-red-500 to-orange-300',
-    label: 'Healthy Ragi Flour',
-    tagline: 'Rich in calcium & fibre',
-    href: '/products/ragi-flour',
-  },
-  {
-    img: '/images/rice.png',
-    bg: 'from-yellow-300 via-amber-200 to-orange-100',
-    label: 'Pure Rice Flour',
-    tagline: 'Crispy dosas & traditional snacks',
-    href: '/products/rice-flour',
-  },
+  { img: '/images/idli.png',  label: 'Premium Idli Rawa',  href: '/products/idli-rawa' },
+  { img: '/images/ragi.png',  label: 'Healthy Ragi Flour', href: '/products/ragi-flour' },
+  { img: '/images/rice.png',  label: 'Pure Rice Flour',    href: '/products/rice-flour' },
 ];
+
+// Single rich dark-brown background for every slide — the product image itself
+// provides all the visual variety. Bottom strip uses backdrop-blur like frosted glass.
+const CAROUSEL_BG = '#2A0C00';
 
 export default function ProductCarousel() {
   const [current, setCurrent] = useState(0);
@@ -42,66 +28,77 @@ export default function ProductCarousel() {
   }, [paused, next]);
 
   return (
-    <div className="w-full max-w-sm mx-auto mb-6 px-2" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      {/* Slide container */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 h-72">
-        {/* All slides stacked — crossfade via opacity */}
+    <div
+      className="w-full rounded-2xl overflow-hidden shadow-xl select-none"
+      style={{ background: CAROUSEL_BG }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Slide area — fixed height, all slides absolutely stacked */}
+      <div className="relative h-52 sm:h-60">
+
+        {/* Warm radial glow always behind the image */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(245,158,11,0.18) 0%, transparent 65%)' }}
+        />
+
         {slides.map((s, i) => (
-          <div
+          <Link
             key={s.label}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out bg-gradient-to-br ${s.bg} flex flex-col items-center justify-center gap-3 px-6 ${i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            href={s.href}
+            className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 z-10"
+            style={{
+              opacity: i === current ? 1 : 0,
+              pointerEvents: i === current ? 'auto' : 'none',
+            }}
+            aria-label={`View ${s.label}`}
           >
-            {/* Product image — large, bright, glowing */}
-            <div className="relative w-44 h-44 drop-shadow-[0_8px_32px_rgba(0,0,0,0.25)]" style={{ filter: 'brightness(1.12) saturate(1.2)' }}>
+            <div className="relative w-36 h-36 sm:w-44 sm:h-44 drop-shadow-[0_10px_32px_rgba(0,0,0,0.55)]">
               <Image src={s.img} alt={s.label} fill className="object-contain" priority={i === 0} />
             </div>
-            {/* Label + tagline */}
-            <div className="text-center">
-              <p className="font-serif font-bold text-white text-xl drop-shadow-md leading-tight">{s.label}</p>
-              <p className="text-white/85 text-sm mt-0.5 drop-shadow">{s.tagline}</p>
-            </div>
-          </div>
+          </Link>
         ))}
 
-        {/* Prev / Next arrows */}
+        {/* Prev arrow */}
         <button
-          onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/25 hover:bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+          onClick={(e) => { e.preventDefault(); prev(); }}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/10 hover:bg-white/25 rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
           aria-label="Previous"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-4 h-4">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
         </button>
+
+        {/* Next arrow */}
         <button
-          onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/25 hover:bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
+          onClick={(e) => { e.preventDefault(); next(); }}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 bg-white/10 hover:bg-white/25 rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
           aria-label="Next"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-4 h-4">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
         </button>
-
-        {/* CTA button overlay */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20">
-          <Link
-            href={slides[current].href}
-            className="bg-white/90 hover:bg-white text-[#431407] font-bold text-xs px-5 py-1.5 rounded-full shadow-lg transition-colors"
-          >
-            View Product →
-          </Link>
-        </div>
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-2 mt-3">
-        {slides.map((_, i) => (
+      {/* Liquid-glass dot strip */}
+      <div className="flex items-center justify-center gap-2 py-2.5 backdrop-blur-sm bg-white/5 border-t border-white/10">
+        {slides.map((s, i) => (
           <button
-            key={i}
+            key={s.label}
             onClick={() => setCurrent(i)}
-            className={`rounded-full transition-all duration-300 ${i === current ? 'bg-[#F59E0B] w-6 h-2' : 'bg-[#F59E0B]/30 w-2 h-2'}`}
-            aria-label={`Go to slide ${i + 1}`}
+            className="rounded-full transition-all duration-300 focus:outline-none"
+            style={{
+              width: i === current ? 20 : 6,
+              height: 6,
+              background: i === current ? '#F59E0B' : 'rgba(255,255,255,0.25)',
+            }}
+            aria-label={`Go to ${s.label}`}
           />
         ))}
       </div>
     </div>
   );
 }
-
