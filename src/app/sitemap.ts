@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://vijaykrishnafoods.in';
+const BASE_URL = 'https://vijaykrishna.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

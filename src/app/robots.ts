@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://vijaykrishnafoods.in/sitemap.xml',
+    sitemap: 'https://vijaykrishna.org/sitemap.xml',
   };
 }

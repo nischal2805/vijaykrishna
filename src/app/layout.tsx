@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vijaykrishnafoods.in'),
+  metadataBase: new URL('https://vijaykrishna.org'),
   title: {
     default: 'Vijaykrishna | Sri Lakshminarasimha Industries',
     template: '%s | Vijaykrishna',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://vijaykrishnafoods.in',
+    url: 'https://vijaykrishna.org',
     siteName: 'Vijaykrishna — Sri Lakshminarasimha Industries',
     title: 'Vijaykrishna | Premium Idli Rawa, Ragi & Rice Flour',
     description:
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://vijaykrishnafoods.in',
+    canonical: 'https://vijaykrishna.org',
   },
 };
 

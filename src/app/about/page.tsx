@@ -5,7 +5,7 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about Sri Lakshminarasimha Industries — a family-owned mill in Gangavathi, Karnataka, crafting premium Idli Rawa, Ragi Flour, and Rice Flour since 1984.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/about' },
+  alternates: { canonical: 'https://vijaykrishna.org/about' },
 };
 
 const milestones = [

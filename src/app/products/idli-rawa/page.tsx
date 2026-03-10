@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Premium Idli Rawa',
   description: 'Buy Vijaykrishna Premium Idli Rawa — made from carefully selected rice, no additives, no preservatives. Perfect for soft fluffy idlis every time.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/products/idli-rawa' },
+  alternates: { canonical: 'https://vijaykrishna.org/products/idli-rawa' },
 };
 
 export default function IdliRawaPage() {

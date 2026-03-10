@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Pure Rice Flour',
   description: 'Buy Vijaykrishna Pure Rice Flour — finely milled, no preservatives. Perfect for chakli, dosas, Karnataka snacks and traditional sweets.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/products/rice-flour' },
+  alternates: { canonical: 'https://vijaykrishna.org/products/rice-flour' },
 };
 
 export default function RiceFlourPage() {

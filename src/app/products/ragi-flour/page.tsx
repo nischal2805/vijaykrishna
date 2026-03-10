@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Healthy Ragi Flour',
   description: 'Buy Vijaykrishna Ragi Flour — stone-ground, gluten-free, rich in calcium and iron. Ideal for rotis, dosas, mudde and porridge.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/products/ragi-flour' },
+  alternates: { canonical: 'https://vijaykrishna.org/products/ragi-flour' },
 };
 
 export default function RagiFlourPage() {

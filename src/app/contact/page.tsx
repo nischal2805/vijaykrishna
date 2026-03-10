@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Sri Lakshminarasimha Industries, Gangavathi. Call, email, or visit us for bulk orders and enquiries.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/contact' },
+  alternates: { canonical: 'https://vijaykrishna.org/contact' },
 };
 
 export default function ContactPage() {

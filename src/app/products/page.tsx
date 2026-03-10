@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Our Products',
   description: 'Explore our range of premium natural flour products — Idli Rawa, Ragi Flour, and Rice Flour. Crafted in Gangavathi, Karnataka with no additives.',
-  alternates: { canonical: 'https://vijaykrishnafoods.in/products' },
+  alternates: { canonical: 'https://vijaykrishna.org/products' },
 };
 
 const products = [
