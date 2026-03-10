@@ -166,17 +166,17 @@ export default function Home() {
               className="group bg-white rounded-2xl border border-orange-100 shadow-sm hover:shadow-lg hover:border-[#F59E0B]/40 transition-all duration-200 overflow-hidden flex flex-col"
             >
               {/* Image area */}
-              <div className="bg-gradient-to-br from-amber-50 via-yellow-100 to-orange-100 flex items-center justify-center py-6 px-4">
+              <div className="bg-gradient-to-br from-amber-300 via-orange-300 to-orange-400 flex items-center justify-center py-3 px-3">
                 <div
-                  className="relative w-36 h-36 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_8px_20px_rgba(0,0,0,0.15)]"
+                  className="relative w-72 h-72 group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_10px_28px_rgba(0,0,0,0.30)]"
                 >
                   <Image src={p.img} alt={p.name} fill className="object-contain" />
                 </div>
               </div>
               {/* Info */}
-              <div className="flex flex-col flex-1 p-4">
-                <h2 className="font-serif font-bold text-[#431407] text-base mb-1 leading-tight">{p.name}</h2>
-                <p className="text-[#78350F]/70 text-xs mb-3">{p.tagline}</p>
+              <div className="flex flex-col flex-1 p-3">
+                <h2 className="font-serif font-bold text-[#431407] text-sm mb-0.5 leading-tight">{p.name}</h2>
+                <p className="text-[#78350F]/70 text-xs mb-2">{p.tagline}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {p.chips.map((c) => (
                     <span key={c} className="bg-green-50 border border-green-200 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
@@ -194,22 +194,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ORDER CTA ─────────────────────────────────────────── */}
+      {/* ── WHOLESALE + ORDER CTA (combined) ─────────────────────────────── */}
       <section className="mx-4 mb-8">
-        <div className="bg-[#431407] rounded-2xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <p className="text-white font-serif font-bold text-xl">Ready to Order?</p>
-            <p className="text-orange-200/70 text-sm mt-0.5">Call us directly to enquire or place a bulk order</p>
+        <div className="bg-gradient-to-r from-[#431407] to-[#6B1E08] rounded-2xl overflow-hidden border border-[#F59E0B]/25 shadow-lg">
+
+          {/* Top — Wholesale */}
+          <div className="px-5 py-5 flex flex-col sm:flex-row items-center gap-4">
+            <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#F59E0B] flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <div className="flex items-center gap-2 justify-center sm:justify-start mb-1">
+                <span className="bg-[#F59E0B] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-widest">Wholesale</span>
+                <span className="text-[#F59E0B] text-[10px] font-semibold tracking-wide">Our Main Business</span>
+              </div>
+              <p className="text-white font-serif font-bold text-lg leading-tight">We Supply to Wholesalers &amp; Distributors</p>
+              <p className="text-orange-200/70 text-xs mt-1">Bulk orders welcome — competitive pricing, direct from our mill in Gangavathi, Karnataka.</p>
+              <div className="flex gap-1.5 mt-2 flex-wrap justify-center sm:justify-start">
+                {['1 kg','20 kg','50 kg'].map(s => <span key={s} className="bg-white/10 text-white/80 text-[10px] font-bold px-2 py-0.5 rounded-full border border-white/15">{s}</span>)}
+              </div>
+            </div>
           </div>
-          <div className="flex gap-3 flex-shrink-0">
-            <a href="tel:9448190326" className="bg-[#F59E0B] text-white font-bold px-6 py-2.5 rounded-xl text-sm hover:bg-[#D97706] transition-colors shadow-md flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" /></svg>
-              94481 90326
-            </a>
-            <a href="/contact" className="border border-white/20 text-white/80 hover:text-white font-semibold px-5 py-2.5 rounded-xl text-sm hover:border-white/50 transition-colors">
-              Contact Us
-            </a>
+
+          {/* Divider */}
+          <div className="mx-5 h-px bg-white/10" />
+
+          {/* Bottom — Order CTA */}
+          <div className="px-5 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-center sm:text-left">
+              <p className="text-white font-serif font-bold text-base">Ready to Order?</p>
+              <p className="text-orange-200/70 text-xs mt-0.5">Call us directly to enquire or place a bulk order</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <a href="tel:9448190326" className="bg-[#F59E0B] text-white font-bold px-6 py-2.5 rounded-xl text-sm hover:bg-[#D97706] transition-colors shadow-md flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" /></svg>
+                94481 90326
+              </a>
+              <a href="/contact" className="border border-white/20 text-white/80 hover:text-white font-semibold px-5 py-2.5 rounded-xl text-sm hover:border-white/50 transition-colors">Contact Us</a>
+            </div>
           </div>
+
         </div>
       </section>
 

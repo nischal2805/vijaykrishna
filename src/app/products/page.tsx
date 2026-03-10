@@ -18,7 +18,7 @@ const products = [
     bgImg: '/images/idli-bg.jpeg',
     href: '/products/idli-rawa',
     highlights: ['Premium quality rice', 'No additives or preservatives', 'Consistent texture', 'Ideal for daily use'],
-    color: 'from-amber-50 to-orange-50',
+    color: 'from-amber-300 via-orange-300 to-orange-400',
   },
   {
     id: 'ragi-flour',
@@ -29,7 +29,7 @@ const products = [
     bgImg: '/images/ragi-bg.jpeg',
     href: '/products/ragi-flour',
     highlights: ['100% natural ragi', 'Rich in calcium & iron', 'High fibre', 'Versatile use'],
-    color: 'from-orange-50 to-red-50',
+    color: 'from-orange-300 via-amber-300 to-red-300',
   },
   {
     id: 'rice-flour',
@@ -40,13 +40,13 @@ const products = [
     bgImg: '/images/rice-bg.jpeg',
     href: '/products/rice-flour',
     highlights: ['Finely milled', 'Smooth texture', 'No preservatives', 'Traditional & versatile'],
-    color: 'from-yellow-50 to-amber-50',
+    color: 'from-amber-300 via-yellow-300 to-orange-300',
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-10 pt-28">
+    <div className="max-w-6xl mx-auto px-4 py-10 pt-28">
       <div className="text-center mb-10">
         <span className="text-[#F59E0B] font-bold uppercase text-xs tracking-wider">Sri Lakshminarasimha Industries</span>
         <h1 className="text-3xl font-serif font-bold text-[#431407] mt-2 mb-3">Our Products</h1>
@@ -56,42 +56,36 @@ export default function ProductsPage() {
         </p>
       </div>
 
-      <div className="space-y-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
+      <div className="space-y-8 lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0">
         {products.map((p) => (
-          <div key={p.id} className={`rounded-3xl overflow-hidden shadow-md bg-gradient-to-br ${p.color} border border-orange-100`}>
-            {/* Background image */}
-            <div className="relative w-full h-52">
-              <Image src={p.bgImg} alt={p.name} fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              <div className="absolute bottom-4 left-4">
+          <div key={p.id} className="rounded-3xl overflow-hidden shadow-lg bg-white border border-orange-100">
+            {/* Product image with gradient bg */}
+            <div className="relative w-full h-72 bg-gradient-to-br from-amber-300 via-orange-300 to-orange-400 border-b border-orange-200 flex items-center justify-center">
+              <div className="relative w-60 h-60 drop-shadow-[0_10px_40px_rgba(0,0,0,0.40)]">
+                <Image src={p.img} alt={p.name} fill className="object-contain" priority />
+              </div>
+              <div className="absolute bottom-3 left-4">
                 <span className="bg-[#F59E0B] text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">100% Natural</span>
               </div>
             </div>
 
-            <div className="p-5 flex gap-4">
-              {/* Clean product PNG */}
-              <div className="w-20 h-20 flex-shrink-0 bg-white rounded-xl border border-orange-100 shadow-sm relative overflow-hidden">
-                <Image src={p.img} alt={p.name} fill className="object-contain p-1" />
-              </div>
-
-              <div className="flex-1">
-                <h2 className="font-serif font-bold text-lg text-[#431407] leading-tight">{p.name}</h2>
-                <p className="text-[#F59E0B] text-xs font-semibold mb-2">{p.tagline}</p>
-                <p className="text-xs text-[#78350F] leading-relaxed mb-3">{p.desc}</p>
-                <ul className="grid grid-cols-2 gap-1 mb-4">
-                  {p.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-1 text-[11px] text-[#78350F]">
-                      <span className="text-[#F59E0B] font-bold">✓</span> {h}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={p.href}
-                  className="block bg-[#F59E0B] text-white text-xs font-bold px-4 py-2.5 rounded-xl text-center hover:bg-[#D97706] transition-colors shadow-md shadow-orange-200"
-                >
-                  Full Details →
-                </Link>
-              </div>
+            <div className="p-5">
+              <h2 className="font-serif font-bold text-xl text-[#431407] leading-tight mb-1">{p.name}</h2>
+              <p className="text-[#F59E0B] text-xs font-semibold mb-2">{p.tagline}</p>
+              <p className="text-xs text-[#78350F] leading-relaxed mb-4">{p.desc}</p>
+              <ul className="flex flex-col gap-1.5 mb-4">
+                {p.highlights.map((h) => (
+                  <li key={h} className="flex items-center gap-2 text-xs text-[#78350F]">
+                    <span className="text-[#F59E0B] font-bold flex-shrink-0">✓</span> {h}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={p.href}
+                className="block bg-[#F59E0B] text-white text-sm font-bold px-4 py-3 rounded-xl text-center hover:bg-[#D97706] transition-colors shadow-md shadow-orange-200"
+              >
+                Full Details →
+              </Link>
             </div>
           </div>
         ))}

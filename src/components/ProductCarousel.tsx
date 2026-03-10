@@ -10,9 +10,8 @@ const slides = [
   { img: '/images/rice.png',  label: 'Pure Rice Flour',    href: '/products/rice-flour' },
 ];
 
-// Single rich dark-brown background for every slide — the product image itself
-// provides all the visual variety. Bottom strip uses backdrop-blur like frosted glass.
-const CAROUSEL_BG = '#2A0C00';
+// Orange gradient background for the carousel.
+const CAROUSEL_BG = 'linear-gradient(135deg, #FCD34D 0%, #FB923C 100%)';
 
 export default function ProductCarousel() {
   const [current, setCurrent] = useState(0);
@@ -35,13 +34,7 @@ export default function ProductCarousel() {
       onMouseLeave={() => setPaused(false)}
     >
       {/* Slide area — fixed height, all slides absolutely stacked */}
-      <div className="relative h-52 sm:h-60">
-
-        {/* Warm radial glow always behind the image */}
-        <div
-          className="absolute inset-0 pointer-events-none z-0"
-          style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(245,158,11,0.18) 0%, transparent 65%)' }}
-        />
+      <div className="relative h-64 sm:h-80">
 
         {slides.map((s, i) => (
           <Link
@@ -54,7 +47,7 @@ export default function ProductCarousel() {
             }}
             aria-label={`View ${s.label}`}
           >
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 drop-shadow-[0_10px_32px_rgba(0,0,0,0.55)]">
+            <div className="relative w-60 h-60 sm:w-72 sm:h-72 drop-shadow-[0_16px_48px_rgba(0,0,0,0.65)]">
               <Image src={s.img} alt={s.label} fill className="object-contain" priority={i === 0} />
             </div>
           </Link>

@@ -29,7 +29,7 @@ export default function RagiFlourPage() {
 
           {/* LEFT - Images */}
           <div className="lg:sticky lg:top-24 mb-8 lg:mb-0">
-            <div className="bg-gradient-to-br from-red-200 via-orange-200 to-amber-200 rounded-3xl overflow-hidden flex items-center justify-center shadow-xl border border-orange-200" style={{minHeight: '540px'}}>
+            <div className="bg-gradient-to-br from-orange-300 via-amber-300 to-red-300 rounded-3xl overflow-hidden flex items-center justify-center shadow-xl border border-orange-300" style={{minHeight: '540px'}}>
               <div className="relative w-[26rem] h-[26rem] sm:w-[30rem] sm:h-[30rem]" style={{ filter: 'brightness(1.12) saturate(1.2) contrast(1.05)' }}>
                 <Image src="/images/ragi.png" alt="Ragi Flour pack" fill className="object-contain drop-shadow-[0_12px_40px_rgba(0,0,0,0.25)]" priority />
               </div>
@@ -70,12 +70,26 @@ export default function RagiFlourPage() {
 
             <div className="bg-orange-50 rounded-2xl p-4 mb-6 text-sm">
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                {[["Brand","Vijaykrishna"],["Manufacturer","Sri Lakshminarasimha Ind."],["Origin","Gangavathi, Karnataka"],["Pack Sizes","Coming soon"],["FSSAI No.","Coming soon"],["Best For","Rotis, Dosa, Porridge"]].map(([k,v]) => (
+                {[["Brand","Vijaykrishna"],["Manufacturer","Sri Lakshminarasimha Ind."],["Origin","Gangavathi, Karnataka"],["Pack Sizes","1 kg, 20 kg, 50 kg"],["FSSAI No.","Coming soon"],["Best For","Rotis, Dosa, Porridge"]].map(([k,v]) => (
                   <div key={k}>
                     <span className="text-[#78350F]/70 text-[11px] uppercase tracking-wide font-semibold block">{k}</span>
                     <span className="text-[#431407] font-bold text-xs">{v}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Wholesale availability */}
+            <div className="bg-[#431407] rounded-2xl px-4 py-4 mb-5 flex items-start gap-3">
+              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#F59E0B] flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg>
+              </div>
+              <div>
+                <p className="text-[#F59E0B] text-xs font-bold uppercase tracking-widest mb-0.5">Available for Wholesale</p>
+                <p className="text-white font-semibold text-sm leading-snug">We supply to wholesalers &amp; distributors</p>
+                <div className="flex gap-1.5 mt-2 flex-wrap">
+                  {['1 kg','20 kg','50 kg'].map(s => <span key={s} className="bg-white/15 text-white text-[11px] font-bold px-2.5 py-1 rounded-full border border-white/20">{s}</span>)}
+                </div>
               </div>
             </div>
 
@@ -145,7 +159,7 @@ export default function RagiFlourPage() {
             { name: "Rice Flour", desc: "Fine-milled rice flour for crisps, batters & sweets", img: "/images/rice.png", bg: "from-amber-50 to-yellow-100", href: "/products/rice-flour" },
           ].map(p => (
             <Link key={p.name} href={p.href} className="group flex items-center gap-4 bg-white border border-orange-100 rounded-2xl p-4 hover:shadow-md hover:border-[#F59E0B]/40 transition-all">
-              <div className={`relative w-16 h-16 flex-shrink-0 rounded-xl bg-gradient-to-br ${p.bg} flex items-center justify-center overflow-hidden`}>
+              <div className={`relative w-28 h-28 flex-shrink-0 rounded-xl bg-gradient-to-br ${p.bg} flex items-center justify-center overflow-hidden`}>
                 <Image src={p.img} alt={p.name} fill className="object-contain p-2" />
               </div>
               <div className="flex-1 min-w-0">
